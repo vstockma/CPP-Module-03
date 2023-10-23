@@ -6,7 +6,7 @@
 /*   By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:42:21 by vstockma          #+#    #+#             */
-/*   Updated: 2023/10/23 13:36:36 by vstockma         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:09:41 by vstockma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string _name;
         int _hit_points;
         int _energy_points;

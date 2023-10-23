@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:41:12 by vstockma          #+#    #+#             */
-/*   Updated: 2023/10/23 14:37:53 by vstockma         ###   ########.fr       */
+/*   Created: 2023/10/23 12:58:16 by vstockma          #+#    #+#             */
+/*   Updated: 2023/10/23 15:32:47 by vstockma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FragTrap_HPP
+# define FragTrap_HPP
+
+#include <iostream>
+#include <string>
 #include "ClapTrap.hpp"
 
-int main()
+class FragTrap : public ClapTrap
 {
-    ClapTrap player1;
-    ClapTrap player2("Hans");
-    
-    player1.attack("Franz");
-    player2.attack("Franz");
-    player1.takeDamage(10);
-    player2.takeDamage(5);
-    player1.beRepaired(100);
-    player2.beRepaired(2);
-    return 0;
-}
+    public:
+        FragTrap(std::string new_name);
+        FragTrap(void);
+        FragTrap(const FragTrap& copy);
+        FragTrap& operator=(const FragTrap& copy);
+        ~FragTrap();
+        void highFivesGuys(void);
+};
+
+#endif

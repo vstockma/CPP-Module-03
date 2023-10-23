@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:41:12 by vstockma          #+#    #+#             */
-/*   Updated: 2023/10/23 14:37:53 by vstockma         ###   ########.fr       */
+/*   Created: 2023/10/23 12:57:36 by vstockma          #+#    #+#             */
+/*   Updated: 2023/10/23 15:12:33 by vstockma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ScavTrap_HPP
+# define ScavTrap_HPP
+
+#include <iostream>
+#include <string>
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : public ClapTrap
 {
-    ClapTrap player1;
-    ClapTrap player2("Hans");
-    
-    player1.attack("Franz");
-    player2.attack("Franz");
-    player1.takeDamage(10);
-    player2.takeDamage(5);
-    player1.beRepaired(100);
-    player2.beRepaired(2);
-    return 0;
-}
+    public:
+        ScavTrap(std::string new_name);
+        ScavTrap(void);
+        ScavTrap(const ScavTrap& copy);
+        ScavTrap& operator=(const ScavTrap& copy);
+        ~ScavTrap();
+        void guardGate();
+};
+
+#endif

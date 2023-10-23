@@ -6,13 +6,13 @@
 #    By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 15:38:18 by vstockma          #+#    #+#              #
-#    Updated: 2023/10/23 13:02:50 by vstockma         ###   ########.fr        #
+#    Updated: 2023/10/23 13:02:43 by vstockma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = clap
+NAME = scav
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
