@@ -6,7 +6,7 @@
 /*   By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:57:07 by vstockma          #+#    #+#             */
-/*   Updated: 2023/10/23 15:18:20 by vstockma         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:08:47 by vstockma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(const ScavTrap& copy)
 {
-    std::cout << "Copy Constructor called" << std::endl;
+    std::cout << "ScavTrap Copy Constructor called" << std::endl;
     *this = copy;
 }
 
@@ -45,13 +45,29 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& copy)
     _hit_points = copy._hit_points;
     _energy_points = copy._energy_points;
     _attack_damage = copy._attack_damage;
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ScavTrap Copy assignment operator called" << std::endl;
     return (*this);
 }
 
 ScavTrap::~ScavTrap(void)
 {
     std::cout  << "ScavTrap Destructor called" << std::endl;
+}
+
+void    ScavTrap::attack(const std::string& target)
+{
+    if (_energy_points < 1)
+    {
+        std::cout << _name << " doesn't have any enerypoints left" << std::endl;
+        return ;
+    }
+    else if (_hit_points < 1)
+    {
+        std::cout << _name << " is dead" << std::endl;
+        return ;
+    }
+    std::cout << _name << " attacks " << target << " from ScavTrap causing " << _attack_damage << " points of damage" << std::endl; 
+    _energy_points--;
 }
 
 void ScavTrap::guardGate()

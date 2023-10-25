@@ -6,7 +6,7 @@
 /*   By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:57:07 by vstockma          #+#    #+#             */
-/*   Updated: 2023/10/23 15:34:04 by vstockma         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:08:47 by vstockma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,22 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& copy)
 ScavTrap::~ScavTrap(void)
 {
     std::cout  << "ScavTrap Destructor called" << std::endl;
+}
+
+void    ScavTrap::attack(const std::string& target)
+{
+    if (_energy_points < 1)
+    {
+        std::cout << _name << " doesn't have any enerypoints left" << std::endl;
+        return ;
+    }
+    else if (_hit_points < 1)
+    {
+        std::cout << _name << " is dead" << std::endl;
+        return ;
+    }
+    std::cout << _name << " attacks " << target << " from ScavTrap causing " << _attack_damage << " points of damage" << std::endl; 
+    _energy_points--;
 }
 
 void ScavTrap::guardGate()

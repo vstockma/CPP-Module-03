@@ -6,7 +6,7 @@
 /*   By: vstockma <vstockma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 12:57:36 by vstockma          #+#    #+#             */
-/*   Updated: 2023/10/23 15:12:33 by vstockma         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:08:46 by vstockma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public ClapTrap
         ScavTrap(const ScavTrap& copy);
         ScavTrap& operator=(const ScavTrap& copy);
         ~ScavTrap();
+        void attack(const std::string& target);
         void guardGate();
 };
 
